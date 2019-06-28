@@ -1,28 +1,14 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <h1 class="title">
         nuxtlog
       </h1>
-      <h2 class="subtitle">
-        Nuxt blog made for me, made by me.
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      
+      <div class="card">
+        <div class="card-content">
+          <p>aiueo</p>
+        </div>
       </div>
     </div>
   </div>
