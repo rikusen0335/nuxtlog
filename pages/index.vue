@@ -4,11 +4,23 @@
       <h1 class="title">
         nuxtlog
       </h1>
-      
-      <div class="card">
-        <div class="card-content">
-          <p>aiueo</p>
+      <div class="row">
+
+        <div
+          v-for="i in 3"
+          :key="i"
+          class="col">
+          <div class="card">
+            <img
+              src="static/wallhaven.jpg"
+              class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">card title</h5>
+              <p class="card-text">You are an idiot :( But now this is template you just gonna train your skill.</p>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
