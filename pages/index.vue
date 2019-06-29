@@ -1,26 +1,16 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">
-        nuxtlog
+      <h1 class="title m-5">
+        Welcome to devmialog
       </h1>
       <div class="row">
-
         <div
-          v-for="i in 3"
+          v-for="i in 10"
           :key="i"
-          class="col">
-          <div class="card">
-            <img
-              src="static/wallhaven.jpg"
-              class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">card title</h5>
-              <p class="card-text">You are an idiot :( But now this is template you just gonna train your skill.</p>
-            </div>
-          </div>
+          class="col-md-4 col-sm-6 col-xs-12">
+          <ArticleCard />
         </div>
-
       </div>
     </div>
   </div>
@@ -28,18 +18,21 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import ArticleCard from '~/components/ArticleCard.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    ArticleCard
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +44,7 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 70px;
   color: #35495e;
   letter-spacing: 1px;
 }
@@ -66,5 +59,21 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.card {
+  border: 1px solid #f2f8f9;
+  transition: .3s;
+
+  &:hover {
+    border: 1px solid #42b883;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    z-index: 500;
+  }
+
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-vue-dark">
       <n-link to="/" class="navbar-brand">Navbar</n-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,6 +70,10 @@ html {
 
 .button--grey:hover {
   color: #fff;
+  background-color: #35495e;
+}
+
+.bg-vue-dark {
   background-color: #35495e;
 }
 </style>

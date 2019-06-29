@@ -23,6 +23,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@mdi/font/css/materialdesignicons.min.css',
   ],
   /*
   ** Plugins to load before mounting the App
