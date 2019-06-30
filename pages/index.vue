@@ -1,9 +1,8 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title m-5">
-        Welcome to devmialog
-      </h1>
+      <h1 class="title mt-5">Welcome to devmialog.</h1>
+      <h4 class="subtitle mb-5">I'm loving in Tech, Program, Gadget and Game.</h4>
       <div class="row">
         <div
           v-for="i in 10"
@@ -59,21 +58,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
-
-.card {
-  border: 1px solid #f2f8f9;
-  transition: .3s;
-
-  &:hover {
-    border: 1px solid #42b883;
-    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-    z-index: 500;
-  }
-
-  img {
-    height: 200px;
-    object-fit: cover;
-  }
 }
 </style>
