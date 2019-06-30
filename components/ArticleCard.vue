@@ -27,3 +27,21 @@
     </n-link>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.card {
+  border: 1px solid #f2f8f9;
+  transition: .3s;
+
+  &:hover {
+    border: 1px solid #42b883;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    z-index: 500;
+  }
+
+  img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+</style>
