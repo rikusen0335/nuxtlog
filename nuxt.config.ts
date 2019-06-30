@@ -42,16 +42,12 @@ const nuxtConfig: NuxtConfiguration = {
   /*
   ** Build configuration
   */
+ 
   build: {
-    extend(config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        if (!config.module) return  // undefinedの場合、pushせずにreturnするように追加
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+    extend (config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = '#source-map'
       }
     }
   }

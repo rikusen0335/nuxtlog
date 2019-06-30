@@ -12,10 +12,10 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import sourceFileArray from '~/content/post/json/summary.json';
+/*import sourceFileArray from '~/content/post/json/summary.json';*/
 
 export default class extends Vue {
-  validate({ params }) {
+  /*validate({ params }) {
     return sourceFileArray.includes(`content/posts/${params.date}-${params.slug}.md`);
   },
   asyncData({ params }) {
@@ -32,7 +32,7 @@ export default class extends Vue {
       ],
       link: [{ rel: 'canonical', href: url }],
     };
-  },
+  },*/
 };
 </script>
 
