@@ -8,21 +8,24 @@
           v-for="i in 10"
           :key="i"
           class="col-md-4 col-sm-6 col-xs-12">
-          <ArticleCard />
+          <n-link
+            to="/post/_date/_slug/"
+            class="text-reset text-decoration-none">
+            <ArticleCard />
+          </n-link>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
+<script lang="ts">
 import ArticleCard from '~/components/ArticleCard.vue'
+import { sourceFileArray } from '~/content/posts/json/summary.json';
 
 export default {
   components: {
-    Logo,
-    ArticleCard
+    ArticleCard,
   }
 }
 </script>

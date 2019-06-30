@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": [
+      "@types/node",
+      "@nuxt/vue-app"
+    ],
+    "paths": { "@/*": [ "./*" ], "~/*": [ "./*" ] },
+  },
+}
