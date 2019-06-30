@@ -20,13 +20,19 @@
 </template>
 
 <script lang="ts">
-import ArticleCard from '~/components/ArticleCard.vue'
-//import { sourceFileArray } from '~/content/posts/json/summary.json';
+import { Component, Vue, Prop } from "vue-property-decorator";
 
-export default {
+import ArticleCard from '~/components/ArticleCard.vue'
+import sourceFileArray from '~/content/post/json/summary.json';
+
+@Component({
   components: {
     ArticleCard,
-  }
+  },
+})
+
+export default class PostIndex extends Vue {
+  
 }
 </script>
 

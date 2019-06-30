@@ -12,14 +12,15 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-/*import sourceFileArray from '~/content/post/json/summary.json';*/
 
-export default class extends Vue {
-  /*validate({ params }) {
-    return sourceFileArray.includes(`content/posts/${params.date}-${params.slug}.md`);
+import sourceFileArray from '~/content/post/json/summary.json';
+
+export default class PostArticle extends Vue {
+  validate({ params }) {
+    return sourceFileArray.includes(`content/post/${params.date}-${params.slug}.md`);
   },
   asyncData({ params }) {
-    return Object.assign({}, require(`~/content/posts/json/${params.date}-${params.slug}.json`), { params });
+    return Object.assign({}, require(`~/content/post/json/${params.date}-${params.slug}.json`), { params });
   },
   head() {
     const title = `${this.title} - でぶみあろぐ`;
@@ -32,7 +33,7 @@ export default class extends Vue {
       ],
       link: [{ rel: 'canonical', href: url }],
     };
-  },*/
+  },
 };
 </script>
 

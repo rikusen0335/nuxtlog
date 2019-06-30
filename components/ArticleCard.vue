@@ -43,8 +43,9 @@
 </style>
 
 <script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+import { Component, Vue, Prop } from "vue-property-decorator";
 
-})
+export default class ArticleCard extends Vue{
+
+}
 </script>
