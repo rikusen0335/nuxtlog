@@ -5,13 +5,13 @@
       <h4 class="subtitle mb-5">I'm loving in Tech, Program, Gadget and Game.</h4>
       <div class="row">
         <div
-          v-for="i in 10"
-          :key="i"
+          v-for="(post, index) in posts"
+          :key="index"
           class="col-md-4 col-sm-6 col-xs-12">
           <n-link
-            to="/post/_date/_slug/"
+            to="/post/_slug/"
             class="text-reset text-decoration-none">
-            <ArticleCard />
+            <ArticleCard :title="post.title" :text="post.text"/>
           </n-link>
         </div>
       </div>
@@ -22,21 +22,49 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 
-import ArticleCard from '~/components/ArticleCard.vue'
 import sourceFileArray from '~/content/post/json/summary.json';
 
 @Component({
   components: {
-    ArticleCard,
+    ArticleCard: () => import('@/components/ArticleCard.vue'),
   },
 })
 
 export default class PostIndex extends Vue {
+  data() {
+    return {
+      posts: [
+        {
+          id: 1,
+          title: "タイトル1",
+          release_date: "2007年9月",
+          text: "ダミーテキスト1"
+        },
+        {
+          id: 2,
+          title: "タイトル2",
+          release_date: "2008年3月",
+          text: "ダミーテキスト2"
+        },
+        {
+          id: 3,
+          title: "A long way",
+          release_date: "2008年6月",
+          text: 'When I was child, my father told me "spend a life you will remember." and I actually do that. They are - my brothers - not clever, spend their life a lot of garbage like smoker.'
+        },
+        {
+          id: 4,
+          title: "人間社会、ポリスとはいかにつくられるか",
+          release_date: "2008年6月",
+          text: "我々は孤独な生き物であるがゆえに、社会を作り、仲間を作ろうとするのだ。"
+        }
+      ]
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-
 .container {
   margin: 0 auto;
   /*min-height: 100vh;*/

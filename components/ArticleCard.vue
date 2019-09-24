@@ -6,9 +6,9 @@
         class="card-img-top">
       <div class="card-body">
         <h5 class="card-title text-center">
-          NuxtJSでブログを作りました
+          {{ title }}
         </h5>
-        <p class="card-text">親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど...</p>
+        <p class="card-text">{{ text }}</p>
         <p class="card-text text-right">
           <small class="text-muted mr-3">
             <span class="mdi mdi-sync"></span>
@@ -24,8 +24,23 @@
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+
+@Component
+export default class ArticleCard extends Vue {
+  @Prop()
+  title!: string
+
+  @Prop()
+  text!: string
+}
+</script>
+
 <style lang="scss" scoped>
 .card {
+  max-height: 450px;
+
   border: 1px solid #f2f8f9;
   transition: .3s;
 
@@ -41,11 +56,3 @@
   }
 }
 </style>
-
-<script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
-
-export default class ArticleCard extends Vue{
-
-}
-</script>

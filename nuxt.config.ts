@@ -1,8 +1,6 @@
 import { Configuration } from '@nuxt/types'
 
 const nuxtConfig: Configuration = {
-  buildModules: ['@nuxt/typescript-build'],
-
   mode: 'universal',
 
   head: {
@@ -15,6 +13,10 @@ const nuxtConfig: Configuration = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  server: {
+    host: '0.0.0.0'
   },
 
   loading: { color: '#fff' },
@@ -31,10 +33,12 @@ const nuxtConfig: Configuration = {
     '@nuxtjs/pwa',
   ],
 
-  typescript: {
-    typeCheck: true,
-    ignoreNotFoundWarnings: true
-  },
+  buildModules: [
+    ['@nuxt/typescript-build', {
+      typeCheck: true,
+      ignoreNotFoundWarnings: true
+    }]
+  ],
  
   build: {
     extend (config, { isClient }) {
