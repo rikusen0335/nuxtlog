@@ -10,6 +10,8 @@
           class="col-md-4 col-sm-6 col-xs-12">
           <n-link
             to="/post/_slug/"
+            :title="post.title"
+            :text="post.text"
             class="text-reset text-decoration-none">
             <ArticleCard :title="post.title" :text="post.text"/>
           </n-link>
@@ -26,7 +28,7 @@ import sourceFileArray from '~/content/post/json/summary.json';
 
 @Component({
   components: {
-    ArticleCard: () => import('@/components/ArticleCard.vue'),
+    ArticleCard: () => import('~/components/ArticleCard.vue'),
   },
 })
 
