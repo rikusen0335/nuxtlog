@@ -1,10 +1,10 @@
-import NuxtConfiguration from '@nuxt/config'
+import { Configuration } from '@nuxt/types'
 
-const nuxtConfig: NuxtConfiguration = {
+const nuxtConfig: Configuration = {
+  buildModules: ['@nuxt/typescript-build'],
+
   mode: 'universal',
-  /*
-  ** Headers of the page
-  */
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -16,32 +16,25 @@ const nuxtConfig: NuxtConfiguration = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Customize the progress-bar color
-  */
+
   loading: { color: '#fff' },
-  /*
-  ** Global CSS
-  */
+
   css: [
     '@mdi/font/css/materialdesignicons.min.css',
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
+
   plugins: [
   ],
-  /*
-  ** Nuxt.js modules
-  */
+
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     '@nuxtjs/pwa',
   ],
-  /*
-  ** Build configuration
-  */
+
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true
+  },
  
   build: {
     extend (config, { isClient }) {
@@ -50,7 +43,11 @@ const nuxtConfig: NuxtConfiguration = {
         config.devtool = '#source-map'
       }
     }
-  }
+  },
+
+  //serverMiddleware: [
+  //  { path: '/api', handler: '~/server/index.ts' }
+  //]
 }
 
-export default nuxtConfig
+module.exports = nuxtConfig

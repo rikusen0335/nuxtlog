@@ -32,7 +32,6 @@ import sourceFileArray from '~/content/post/json/summary.json';
 })
 
 export default class PostIndex extends Vue {
-  
 }
 </script>
 
