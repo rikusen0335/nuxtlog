@@ -10,8 +10,7 @@
           class="col-md-4 col-sm-6 col-xs-12">
           <n-link
             to="/post/_slug/"
-            :title="post.title"
-            :text="post.text"
+            :post="post"
             class="text-reset text-decoration-none">
             <ArticleCard
               :post="post"/>

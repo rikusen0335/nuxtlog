@@ -37,6 +37,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background-color: #F2F1EF;
+}
+
 *,
 *:before,
 *:after {
