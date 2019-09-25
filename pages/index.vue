@@ -14,10 +14,7 @@
             :text="post.text"
             class="text-reset text-decoration-none">
             <ArticleCard
-              :title="post.title"
-              :text="post.text"
-              :release_date="post.release_date"
-              :update_date="post.update_date"/>
+              :post="post"/>
           </n-link>
         </div>
       </div>

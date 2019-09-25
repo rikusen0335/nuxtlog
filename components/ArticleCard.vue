@@ -6,17 +6,17 @@
         class="card-img-top">
       <div class="card-body">
         <h5 class="card-title text-center">
-          {{ title }}
+          {{ post.title }}
         </h5>
-        <p class="card-text">{{ text }}</p>
+        <p class="card-text">{{ post.text }}</p>
         <p class="card-text text-right">
-          <small v-if="update_date" class="text-muted mr-3">
+          <small v-if="post.update_date" class="text-muted mr-3">
             <span class="mdi mdi-sync"></span>
-            {{ update_date }}
+            {{ post.update_date }}
           </small>
           <small class="text-muted">
             <span class="mdi mdi-clock-outline"></span>
-            {{ release_date }}
+            {{ post.release_date }}
           </small>
         </p>
       </div>
@@ -30,16 +30,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 export default class ArticleCard extends Vue {
   @Prop()
-  title!: string
-
-  @Prop()
-  text!: string
-
-  @Prop()
-  release_date!: string
-
-  @Prop()
-  update_date!: string
+  post!: object[]
 }
 </script>
 
