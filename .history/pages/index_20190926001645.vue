@@ -24,7 +24,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 
-//import sourceFileArray from '~/content/post/json/summary.json';
+import sourceFileArray from '~/content/post/json/summary.json';
 
 @Component({
   components: {
