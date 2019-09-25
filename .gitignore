@@ -89,3 +89,5 @@ sw.*
 
 .tool-versions
 .history
+.vscode/*
+!.vscode/extensions.json
