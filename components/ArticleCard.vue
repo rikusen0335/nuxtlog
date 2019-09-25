@@ -12,11 +12,11 @@
         <p class="card-text text-right">
           <small class="text-muted mr-3">
             <span class="mdi mdi-sync"></span>
-            2019 / 06 / 27
+            {{ release_date }}
           </small>
-          <small class="text-muted">
+          <small v-if="update_date" class="text-muted">
             <span class="mdi mdi-clock-outline"></span>
-            2019 / 06 / 25
+            {{ update_date }}
           </small>
         </p>
       </div>
@@ -34,6 +34,12 @@ export default class ArticleCard extends Vue {
 
   @Prop()
   text!: string
+
+  @Prop()
+  release_date!: string
+
+  @Prop()
+  update_date!: string
 }
 </script>
 

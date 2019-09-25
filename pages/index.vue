@@ -13,7 +13,11 @@
             :title="post.title"
             :text="post.text"
             class="text-reset text-decoration-none">
-            <ArticleCard :title="post.title" :text="post.text"/>
+            <ArticleCard
+              :title="post.title"
+              :text="post.text"
+              :release_date="post.release_date"
+              :update_date="post.update_date"/>
           </n-link>
         </div>
       </div>
@@ -39,25 +43,27 @@ export default class PostIndex extends Vue {
         {
           id: 1,
           title: "タイトル1",
-          release_date: "2007年9月",
+          release_date: "2007 / 11 / 27",
+          update_date: "2007 / 11 / 29",
           text: "ダミーテキスト1"
         },
         {
           id: 2,
           title: "タイトル2",
-          release_date: "2008年3月",
+          release_date: "2008 / 03 / 05",
           text: "ダミーテキスト2"
         },
         {
           id: 3,
           title: "A long way",
-          release_date: "2008年6月",
+          release_date: "2008 / 06 / 16",
+          update_date: "2008 / 07 / 02",
           text: 'When I was child, my father told me "spend a life you will remember." and I actually do that. They are - my brothers - not clever, spend their life a lot of garbage like smoker.'
         },
         {
           id: 4,
           title: "人間社会、ポリスとはいかにつくられるか",
-          release_date: "2008年6月",
+          release_date: "2008 / 06 / 21",
           text: "我々は孤独な生き物であるがゆえに、社会を作り、仲間を作ろうとするのだ。"
         }
       ]
