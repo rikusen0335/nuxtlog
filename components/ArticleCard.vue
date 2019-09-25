@@ -10,12 +10,12 @@
         </h5>
         <p class="card-text">{{ post.text }}</p>
         <p class="card-text text-right">
-          <small v-if="post.update_date" class="text-muted mr-3">
-            <span class="mdi mdi-sync"></span>
+          <small v-if="post.update_date" class="text-muted mr-3 to-match-text">
+            <span class="mdi mdi-sync to-match-icon"></span>
             {{ post.update_date }}
           </small>
-          <small class="text-muted">
-            <span class="mdi mdi-clock-outline"></span>
+          <small class="text-muted to-match-text">
+            <span class="mdi mdi-clock-outline to-match-icon"></span>
             {{ post.release_date }}
           </small>
         </p>

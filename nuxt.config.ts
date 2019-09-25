@@ -26,7 +26,7 @@ const nuxtConfig: Configuration = {
   ],
 
   plugins: [
-    '@/plugins/dayjs'
+    //'@/plugins/dayjs'
   ],
 
   modules: [
@@ -38,8 +38,13 @@ const nuxtConfig: Configuration = {
     ['@nuxt/typescript-build', {
       typeCheck: true,
       ignoreNotFoundWarnings: true
-    }]
+    }],
+    '@nuxtjs/moment',
   ],
+
+  moment: {
+    locales: ['ja']
+  },
  
   build: {
     extend (config, { isClient }) {
