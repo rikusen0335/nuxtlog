@@ -26,13 +26,12 @@ const nuxtConfig: Configuration = {
   ],
 
   plugins: [
+    '@/plugins/dayjs'
   ],
 
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/pwa',
-
-    ['@nuxtjs/moment', ['ja']],
   ],
 
   buildModules: [

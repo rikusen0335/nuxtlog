@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -79,5 +79,14 @@ body {
 
 .bg-vue-dark {
   background-color: #35495e;
+}
+
+.to-match-text {
+  vertical-align: middle;
+}
+
+.to-match-icon{
+  @extend .to-match-text;
+  font-size: 14px;
 }
 </style>
