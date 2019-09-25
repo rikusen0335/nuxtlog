@@ -1,5 +1,7 @@
 <template>
-  <!--{{ post.title }}-->
+  <div>
+    <!--{{ post.title }}-->
+  </div>
 </template>
 
 <script lang="ts">
