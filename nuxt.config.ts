@@ -31,6 +31,8 @@ const nuxtConfig: Configuration = {
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/pwa',
+
+    ['@nuxtjs/moment', ['ja']],
   ],
 
   buildModules: [
