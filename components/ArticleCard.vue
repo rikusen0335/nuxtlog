@@ -8,15 +8,15 @@
         <h5 class="card-title text-center">
           {{ post.title }}
         </h5>
-        <p class="card-text">{{ post.text }}</p>
+        <p class="card-text">{{ post.mainText }}</p>
         <p class="card-text text-right">
-          <small v-if="post.update_date" class="text-muted mr-3 to-match-text">
+          <small v-if="post.updateDate" class="text-muted mr-3 to-match-text">
             <span class="mdi mdi-sync to-match-icon"></span>
-            {{ post.update_date }}
+            {{ post.updateDate }}
           </small>
           <small class="text-muted to-match-text">
             <span class="mdi mdi-clock-outline to-match-icon"></span>
-            {{ post.release_date }}
+            {{ post.releaseDate }}
           </small>
         </p>
       </div>
@@ -30,7 +30,7 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 @Component
 export default class ArticleCard extends Vue {
   @Prop()
-  post!: object[]
+  post!: object
 }
 </script>
 

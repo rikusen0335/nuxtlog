@@ -2,19 +2,17 @@
   <div class="container">
     <div>
       <h1 class="title mt-5">Welcome to devmialog.</h1>
-      <h4 class="subtitle mb-5">I'm loving in Tech, Program, Gadget and Game.</h4>
+      <h4 class="subtitle mb-5">I Love Techs, Programs, Gadgets and Games.</h4>
       <h3>現在の時刻: {{ $moment().format('YYYY / MM / DD') }}</h3>
       <div class="row">
         <div
-          v-for="(post, index) in $store.state.posts"
+          v-for="(post, index) in posts"
           :key="index"
           class="col-md-4 col-sm-6 col-xs-12">
           <n-link
-            to="/post/_slug/_id.vue"
-            class="text-reset text-decoration-none"
-            @click.native="currentPost(post.id)">
-            <ArticleCard
-              :post="post"/>
+            :to="`/post/${post.slug}`"
+            class="text-reset text-decoration-none">
+            <ArticleCard :post="post"/>
           </n-link>
         </div>
       </div>
@@ -33,8 +31,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
   },
 })
 export default class PostIndex extends Vue {
-  currentPost(id: number) {
-    return id
+  private get posts() {
+    return this.$store.getters["posts"]
   }
 }
 </script>
