@@ -6,13 +6,13 @@
       <h3>現在の時刻: {{ $moment().format('YYYY / MM / DD') }}</h3>
       <div class="row">
         <div
-          v-for="(post, index) in posts"
+          v-for="(post, index) in $store.state.posts"
           :key="index"
           class="col-md-4 col-sm-6 col-xs-12">
           <n-link
-            to="/post/_slug/"
-            :post="post"
-            class="text-reset text-decoration-none">
+            to="/post/_slug/_id.vue"
+            class="text-reset text-decoration-none"
+            @click.native="currentPost(post.id)">
             <ArticleCard
               :post="post"/>
           </n-link>
@@ -33,37 +33,8 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
   },
 })
 export default class PostIndex extends Vue {
-  data() {
-    return {
-      posts: [
-        {
-          id: 1,
-          title: 'タイトル1',
-          release_date: '2007 / 11 / 27',
-          update_date: '2007 / 11 / 29',
-          text: 'ダミーテキスト1'
-        },
-        {
-          id: 2,
-          title: 'タイトル2',
-          release_date: '2008 / 03 / 05',
-          text: 'ダミーテキスト2'
-        },
-        {
-          id: 3,
-          title: 'A long way',
-          release_date: '2008 / 06 / 16',
-          update_date: '2008 / 07 / 02',
-          text: 'When I was child, my father told me "spend a life you will remember." and I actually do that. They are - my brothers - not clever, spend their life a lot of garbage like smoker.'
-        },
-        {
-          id: 4,
-          title: '人間社会、ポリスとはいかにつくられるか',
-          release_date: '2008 / 06 / 21',
-          text: '我々は孤独な生き物であるがゆえに、社会を作り、仲間を作ろうとするのだ。'
-        }
-      ]
-    }
+  currentPost(id: number) {
+    return id
   }
 }
 </script>

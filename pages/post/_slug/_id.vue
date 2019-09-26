@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--{{ post.title }}-->
+    <p>{{ currentPost.title }}</p>
   </div>
 </template>
 
@@ -9,7 +9,9 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class PostArticle extends Vue {
-  @Prop()
-  post!: object[]
+  //@Prop()
+  //post!: object[]
+  
+  //currentPost = this.$store.state.posts[id]
 }
 </script>
