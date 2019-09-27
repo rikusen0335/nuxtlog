@@ -1,17 +1,32 @@
 <template>
   <div>
-    <p>{{ $store.getters[''] }}</p>
+    <p>{{ post.title }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator"
+import { Component, Vue, Prop } from 'vue-property-decorator'
+import VueRouter from 'vue-router'
 
-@Component
+@Component({})
 export default class PostArticle extends Vue {
-  //private team: object = {}
-  public get currentPost() {
-    return this.$store.getters['getPost']
+  public post: object = {}
+  public slug_id: string = ''
+
+  public currentPost = () => {
+    //console.log(this.$route.params.slug)
+    return this.$store.getters['currentPost']
   }
+
+  mounted() {
+    this.slug_id = this.$route.params.slug
+    this.$store.dispatch('getCurrentPost', this.slug_id)
+    this.post = this.currentPost()
+  }
+
+  /*async asyncData(context: Context) {
+    console.log("aaaaa")
+    this.post = this.currentPost()
+  }*/
 }
 </script>

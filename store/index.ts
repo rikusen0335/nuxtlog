@@ -4,6 +4,7 @@ import { ActionTree, MutationTree, GetterTree, ActionContext } from 'vuex'
 
 interface State {
   posts: Object []
+  currentPost: Object
 }
 
 export const state = (): State => ({
@@ -46,18 +47,30 @@ export const state = (): State => ({
       releaseDate: '2008 / 06 / 21',
       mainText: '我々は孤独な生き物であるがゆえに、社会を作り、仲間を作ろうとするのだ。'
     }
-  ]
+  ],
+  currentPost: {
+    id: 4,
+    title: '人間社会、ポリスとはいかにつくられるか',
+    slug: 'how-police-made',
+    releaseDate: '2008 / 06 / 21',
+    mainText: '我々は孤独な生き物であるがゆえに、社会を作り、仲間を作ろうとするのだ。'
+  }
 })
 
 export const getters: GetterTree<State, any> = {
   posts: state => state.posts,
-  currentPost: state => {
-    return state.posts
-  }
+  currentPost: state => state.currentPost
 }
 
 export const mutations: MutationTree<State> = {
+  setCurrentPost: (state, post) => state.currentPost = post
 }
 
 export const actions: ActionTree<State, any> = {
+  getCurrentPost({ state, commit }, param) {
+    const post = state.posts.find(function(item: any) {
+      return ((item.slug).indexOf(param) >= 0)
+    })
+    commit('setCurrentPost', post)
+  }
 }

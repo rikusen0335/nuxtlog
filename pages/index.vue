@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h1 class="title mt-5">Welcome to devmialog.</h1>
-      <h4 class="subtitle mb-5">I Love Techs, Programs, Gadgets and Games.</h4>
+      <h4 class="subtitle mb-5">I love Techs, Programs, Gadgets and Games.</h4>
       <h3>現在の時刻: {{ $moment().format('YYYY / MM / DD') }}</h3>
       <div class="row">
         <div
